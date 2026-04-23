@@ -1,8 +1,14 @@
 <?php
 
-require_once "controller/MahasiswaController.php";
+require_once "model/Mahasiswa.php";
 
-$controller = new MahasiswaController();
-$controller->index();
+class MahasiswaController {
 
-?>
+    public function index() {
+        $model = new Mahasiswa();
+        $data = $model->getData();
+
+        require "view/mahasiswa_view.php";
+    }
+
+}
